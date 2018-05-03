@@ -1,0 +1,7 @@
+.idea
+.ignore
+runtime/
+public/uploads
+composer.lock
+*.log
+thinkphp

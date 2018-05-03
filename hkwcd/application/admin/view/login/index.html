@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$Think.lang.admin_login_index_title}</title>
+    <script type="text/javascript" src="/static/admin/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/login.js"></script>
+    <link rel="stylesheet" href="/static/admin/css/login.css" />
+    <script type="text/javascript">
+        var verifyUrl = "{:captcha_src()}";
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header clearfix">
+        <div class="subLogo"><span>{$Think.lang.admin_login_index_title}</span></div>
+    </div>
+    <div class="content login">
+        <form action="{:U(GROUP_NAME.'/Login/login')}" method="post" name="LoginForm" onsubmit="return ChkLogin()">
+            <p class="username"><input class="l_ipt" name="username"  id="username" maxlength="20" type="text" onblur="if(this.value==''){this.value='';this.style.color='#aaa'}" onfocus="if(this.value=='{$Think.lang.admin_login_username_required}'){this.value='';this.style.color='#666'}" value="" /></p>
+            <p class="password"><input class="l_ipt"  name="password" id="password" type="password" onblur="if(this.value==''){this.value='';this.style.color='#aaa'}" onfocus="if(this.value==''){this.value='';this.style.color='#666'}" value="" /></p>
+            <p class="authcode"><input class="l_ipt"  name="code" id="codeshow" maxlength="10" type="text" onblur="if(this.value==''){this.value='{$Think.lang.admin_login_captcha_required}';this.style.color='#aaa'}" onfocus="if(this.value==''){this.value='';this.style.color='#666'}" value="" />
+                <span class="img" style="top: 10px">
+    <img src="{:captcha_src()}" id="code" style="cursor:pointer;height: 35px;width: 80px;" /> <a href="javascript:void(0)" onclick="change_code('code')" >{$Think.lang.admin_login_index_not_clear}</a>
+    </span></p>
+            <p class="btn"><button type="submit" class="l_btn">{$Think.config.admin_login_index_login}</button></p>
+        </form>
+
+    </div>
+    <div class="footer">
+        <p>&nbsp;</p>
+        <p class="sq">{$Think.config.web_copyright} </p>
+    </div>
+</div>
+</body>
+</html>

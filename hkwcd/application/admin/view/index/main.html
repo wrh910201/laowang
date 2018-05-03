@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--360浏览器优先以webkit内核解析-->
+
+
+    <title>H+ 后台主题UI框架 - 主页示例</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/hplus/css/style.min.css?v=4.1.0" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-4">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>{$Think.lang.admin_main_profile}</h5>
+                </div>
+                <div class="ibox-content">
+                    <ul>
+                        <li>{$Think.lang.admin_main_hello}, {$operator.realname}</li>
+                        <li>{$Think.lang.admin_main_last_login_time}：{:date("Y-m-d H:i:s", $operator.logintime)}</li>
+                        <li>{$Think.lang.admin_main_last_login_ip}：{$operator.loginip}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>{$Think.lang.admin_main_system_base_info}</h5>
+                </div>
+                <div class="ibox-content">
+                    <ul>
+                        <li>{$Think.lang.admin_main_system_website}：{$site_config.cfg_webname}</li>
+                        <li>{$Think.lang.admin_main_system_domain}：{$site_config.cfg_weburl}</li>
+                        <li>{$Think.lang.admin_main_system_phone}：{$site_config.cfg_phone}</li>
+                        <li>{$Think.lang.admin_main_system_qq}：{$site_config.cfg_qq}</li>
+                        <li>{$Think.lang.admin_main_system_email}：{$site_config.cfg_email}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>{$Think.lang.admin_main_server_info}</h5>
+                </div>
+                <div class="ibox-content">
+                    <ul>
+                        <li>{$Think.lang.admin_main_server_os}：{$os}</li>
+                        <li>{$Think.lang.admin_main_server_env}：{$php_version}</li>
+                        <li>{$Think.lang.admin_main_server_mysql}：{$mysql_version}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/static/hplus/js/plugins/layer/layer.min.js"></script>
+<script src="/static/hplus/js/content.min.js"></script>
+<script src="/static/hplus/js/welcome.min.js?v=2.0"></script>
+</body>
+
+</html>
